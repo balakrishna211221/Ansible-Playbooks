@@ -1,0 +1,10 @@
+
+
+- hosts: all 
+  remote_user: root
+  vars:
+    name: balu
+  tasks:
+  - name: showing variable value!
+    debug:
+      msg: "{{ name }}"
