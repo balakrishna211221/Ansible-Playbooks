@@ -1,0 +1,6 @@
+
+    variable_name:   #this is dictionary
+      id: 1234321
+      name: balu  
+    variable_2: variable value   # this is variable
+    variable_3: value 3   

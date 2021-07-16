@@ -1,0 +1,14 @@
+
+
+
+# TO Execute this playbook first The first step is to create a /etc/ansible/facts.d directory on the managed or remote node.
+#Inside this directory, create a file(s) with a .fact extension. This file(s) will return JSON data when the playbook is run on the Ansible control node, which is inclusive of the other facts that Ansible retrieves after a playbook run.
+#Here’s an example of a custom fact file called date_time.fact that retrieves date
+
+
+- hosts: all
+
+  tasks:
+   - name: Get custom facts
+     debug:
+      msg: The custom fact is {{ansible_local.date_time}}

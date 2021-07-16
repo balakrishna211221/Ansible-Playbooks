@@ -1,0 +1,18 @@
+
+
+# In this playbook we are useing dictionary from vars files
+
+
+
+
+
+
+
+- hosts: all
+  vars_files:
+    - dictonary_include_file.yaml      
+  tasks:
+  - name: this playbook is about to understanting dictionary and variables difference
+    debug:
+      msg: "{{ variable_name.id }}  and {{ variable_name.name }},  and also variable_2 is  {{ variable_2 }}  variable_3 is{{ variable_3 }}     "
+

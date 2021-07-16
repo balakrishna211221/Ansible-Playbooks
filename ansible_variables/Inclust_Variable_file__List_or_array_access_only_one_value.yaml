@@ -1,0 +1,15 @@
+
+
+
+
+
+
+
+
+- hosts: all
+  vars_files:
+    - sample_variable_files_list.yaml
+  tasks:
+  - name: Ansible List variable Example
+    debug:
+      msg: "{{ continents [1] }}"
