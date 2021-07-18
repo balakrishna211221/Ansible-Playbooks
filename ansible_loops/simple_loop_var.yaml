@@ -1,0 +1,23 @@
+
+
+
+
+
+
+- name: loop with variable 
+  hosts: all
+  vars:
+    names:
+      - balu
+      - rahul
+      - akhila
+      - kajal
+      - samantha
+  tasks:  
+  - name: loop 
+    debug: 
+      msg: "{{ item }}"
+    loop: "{{ names }}"
+
+   
+

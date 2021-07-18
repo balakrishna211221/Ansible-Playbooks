@@ -1,0 +1,13 @@
+
+
+
+
+- name: loop with var file
+  hosts: all
+  vars_files:
+    - simple_var_list_files.yaml
+  tasks:
+  - name: loop start
+    debug:
+      msg: "{{ item }}"
+    loop: "{{ countries }}"  

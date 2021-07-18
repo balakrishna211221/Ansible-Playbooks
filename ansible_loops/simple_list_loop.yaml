@@ -1,0 +1,14 @@
+
+
+
+
+- name: loop
+  hosts: all
+  tasks:
+  - name: loop example 
+    debug:
+      msg: "{{ item  }}"
+    loop: 
+      - balu
+      - chandu
+      - akhila
