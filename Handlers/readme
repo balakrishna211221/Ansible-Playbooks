@@ -1,0 +1,42 @@
+
+
+
+
+its one of  importend topic in ansible
+
+we get lot question in interview from this topic
+what are handlers ?
+it execute task only if another taks completes successfully.
+
+ok then how handler will work, there is something called "notify" 
+that "notify" used to trig the main task.
+
+
+we can use handler when 
+-  restart services
+-  hosts reboots
+
+more
+
+
+and  NOTE: Handlers are executed after all tasks execution complited
+
+
+for example something went wrong in task (failed ), handler wont do anything
+
+even if  tasks failed, we want handler to be exected 
+we can use " 
+
+force handler : true
+
+ " this will execute handler even tasks file.
+
+
+
+NOte: one the interview questio 
+     one task -----------------> tricker----------------> more then one handler
+    
+
+
+in industry no one use multiple handler.
+

@@ -1,0 +1,29 @@
+
+
+
+
+- name: multiple handler to one task example start
+  hosts: all
+  tasks:
+         - name: update everything
+           package:
+               name: nginx
+               state: latest
+         - name: Copy using inline content
+           copy:
+               content: "update the file"
+               dest: /home/mukesh.txt
+               mode: "0777"
+           notify:
+                - update
+                - data
+  handlers:
+       - name: update
+         find:
+                paths: /home/
+                patterns: '*.txt'
+                recurse: yes
+         register: new_file
+       - name: data
+         debug:
+            var: new_file.matched

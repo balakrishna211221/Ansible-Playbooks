@@ -1,0 +1,72 @@
+
+
+
+What is an Ansible block?
+Blocks in Ansible allow you to logically group a set of tasks together, primarily for one of two purposes. 
+One might be to apply conditional logic to an entire set of tasks
+
+
+block contain no f tasks in it. we can call it as superset of task 
+
+in blocks we " error handling ", "rescue"  , " always "
+
+rescue = if task failed in bloc, rescue will execute
+always = if either block success (or) fail and either  rescue  success (or) fail, always will execute.
+
+
+why we use block ?
+i have create two example playbook.
+
+1. why_we_use_block_example1.yaml
+2. why_we_use_block_example2.yaml
+
+
+In "why_we_use_black_example1.yaml" playbook, i have given 4 tasks.
+We could have added become: yes in the starting of the play but then that 
+variable will be applied to the entire play wherein we don’t want this permission for task 3.
+
+
+ To overcome this we have block level solution wherein we can place all the common tasks under single block.
+In "why_we_use_block_example2.yaml" playbook.
+ Here we have combined all the tasks which requires root level privilege into single block and instead of using become 3 times, we have applied this to the entire block
+
+
+
+
+
+
+
+
+
+*****Note:IN blocks we cannot use items and loop 
+
+now we know why we use block
+
+
+
+Example: rescue block
+
+
+i have created playbook called "rescue_block_error_recovery.yaml"
+
+
+
+We have additional benefit while using ansible blocks to perform recovery operation i.e. if any of the tasks within a block fails then in a ideal scenario the playbook would exit (unless you are using ignore_errors: yes). But with blocks we can assign a rescue block which can again contain a bunch of tasks. So if any of the tasks within block fails then automatically the tasks from recovery block will be executed which can perform any clean up activity which you would want to do in case of failure.
+
+Advertisement
+Lastly we also have an always block which will be called independent of the task execution status which can be used to give something like SUMMARY or anything as per your requirement.
+
+In this sample playbook rescue_block_error_recovery.yaml.yml we have created two tasks inside the block wherein one task will pass while the other is expected to fail. In which case the rescue block will be executed followed by the always block.
+
+
+after execution rescue_block_error_recovery.yaml playbook, As you can see, our task1 was successful but task2 has failed after which the recovery block was executed followed by always block.
+
+
+
+
+Now assuming none of the tasks failed in the block section in which case the rescue block will not be executed, but always block will be executed independent of the task status.
+
+I have updated my playbook to list /tmp directory content so that the second task does not fail, let’s observe the output after execution:
+
+
+So this time the rescue block has not been called but always block was executed as expected.

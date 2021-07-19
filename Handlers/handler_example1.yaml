@@ -1,0 +1,17 @@
+
+
+
+- name: handler test1
+  hosts: all
+  tasks:
+         - name: Install nginx
+           package:
+             name: nginx
+             state: present
+           notify:
+                Start nginx
+  handlers:
+       - name: Start nginx
+         service:
+           name: nginx
+           state: started 
