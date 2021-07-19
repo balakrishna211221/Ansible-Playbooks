@@ -1,0 +1,25 @@
+
+
+
+- hosts: all
+  tasks:
+  - name: Ansible register variable basic example
+    shell: "find *.txt"
+    ignore_errors: true  # if we dont use ignore, execution stop here and give error if file is not prasent
+    register: find_output
+
+  - debug:
+      msg: "not There"
+    ignore_errors: true
+    when: find_output.failed
+  - name: create file 
+    command: "touch balu.txt"
+    ignore_errors: true
+    register: created_file
+    when: find_output.failed
+
+  - debug:
+      msg: "has file {{ find_output.stdout }} "
+    ignore_errors: true
+    when: find_output.rc == 0
+
