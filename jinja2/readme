@@ -10,6 +10,31 @@ In this way templates offers an efficient and flexible solution to create or alt
 ****also from ansible facts to render values.
 
 
+How to use Jinja2 Templates in ansible?
+
+
+Jinja2 is a powerful and easy to use python-based templating engine that comes in handy in an IT environment with
+ multiple servers where configurations vary every other time. Creating static configuration files for each of these nodes is tedious 
+and may not be a viable option since it will consume more time and energy. And this is where templating comes in.
+
+Jinja2 templates are simple template files that store variables that can change from time to time. 
+When Playbooks are executed, these variables get replaced by actual values defined in Ansible Playbooks. 
+This way, templating offers an efficient and flexible solution to create or alter configuration file with ease.
+
+
+jinja2 template tags
+1. {{ }} ------------>  print the values during execution.
+2. {% %} ------------>  these are used for control statement such as loops and if else.
+3. {# #} ------------>  COmments to describe tasks
+
+
+In most cases, Jinja2 template files are used for creating files or 
+replacing configuration files on servers. Apart from that, you can perform conditional statements
+such as loops and if-else statements, and transform the data using filters and so much more.
+
+Template files bear the .j2 extension, implying that Jinja2 templating is in use.
+
+
 
 
 
