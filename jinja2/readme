@@ -1,0 +1,18 @@
+SO,
+what is jinja2 templates?
+
+jinja2 templates are simple template files thats store variable that can change from time to time. when playbook are exected
+these variable get replaced by actual values defined in ansible playbook.
+In this way templates offers an efficient and flexible solution to create or alter configuration file with.
+
+
+*****also it is very importent thing is it will use vars section in playbook to render values.
+****also from ansible facts to render values.
+
+
+
+
+
+
+
+
