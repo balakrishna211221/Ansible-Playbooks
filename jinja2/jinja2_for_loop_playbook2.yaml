@@ -1,0 +1,12 @@
+
+
+---
+- hosts: all
+  vars: 
+    cars: ['bmw','indica','rr','ford']
+  tasks:
+    - name: A loop
+      template: 
+        src: jinja2_loop_for_1.js
+        dest: /home/ubuntu/filecars.txt
+

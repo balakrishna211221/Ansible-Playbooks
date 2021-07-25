@@ -1,0 +1,14 @@
+
+
+
+
+---
+- hosts: all
+  vars:
+    version_number: '1.4.35'
+    server: 'ubuntu'
+  tasks:
+    - name: jinja2 use
+      template:
+        src: Simple_1_jinja2.j2
+        dest: /home/ubuntu/filejinja2.txt
