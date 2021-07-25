@@ -1,0 +1,13 @@
+
+
+
+---
+- hosts: all
+  vars: 
+    names: ['balu','chandu', 'akhile']
+  tasks:
+    - name: convert to upper
+      template:
+        src: jinja2_convert_to_uppercase.j2 
+        dest: /home/ubuntu/fileupper.txt
+

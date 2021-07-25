@@ -1,0 +1,70 @@
+
+
+
+filter with jinja to
+
+given names : 
+ {% for item in names %}
+
+{{ item }}
+
+{% endfor %}
+
+
+conveting above names to lower 
+
+{% for item in names %}
+
+{{ item | lower }}
+
+{% endfor %}
+ 
++======================================================================+
+
+ min max and unique number 
+
+
+minimum value :
+given values:
+
+{% for item in numbers %}
+
+{{ item }}
+
+{% endfor %}
+
+
+finding minimum numbers from above
+
+{% for item in numbers %}
+
+{{ item | min }}
+
+{% endfor %}
+
+----------------------------------------------------------------------
+
+finding max number 
+
+
+{% for item in numbers %}
+
+{{ item | max }}
+
+{% endfor %}
+
+
+
+---------------------------------------------------------------------
+
+
+finding unique
+
+
+{% for item in numbers %}
+
+{{ item | unique}}
+
+{% endfor %}
+
+

@@ -1,0 +1,14 @@
+
+
+
+---
+- hosts: all
+  vars:
+    names: ['CHANDU','BALU','AKHILA']
+    numbers: ['100','37','45','65','60','78']
+  tasks:
+    - name: filters
+      template:
+        src: jinja2_filter.j2
+        dest: /home/ubuntu/filter.txt
+
