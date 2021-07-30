@@ -1,0 +1,10 @@
+
+
+
+
+- name: test group vars for all hosts
+  hosts: all
+  tasks: 
+    - name: var value from group_vars all file
+      debug: 
+        msg: name is {{ name  }}

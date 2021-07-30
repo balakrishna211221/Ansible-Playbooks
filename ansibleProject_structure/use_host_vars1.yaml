@@ -1,0 +1,10 @@
+
+
+
+
+- name: useing hosts var
+  hosts: slave1
+  tasks: 
+    - name: useing host_var for slave1 hosts
+      debug: 
+        msg: '{{ msg }} {{ ansible_hostname }}'

@@ -1,0 +1,7 @@
+
+
+3.235.90.78
+3.236.90.106
+
+#test-slave1 ansible_ssh_host=3.235.90.78
+#test-slave2 ansible_ssh_host=3.236.90.106

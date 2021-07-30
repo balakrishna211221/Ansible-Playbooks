@@ -1,0 +1,10 @@
+
+
+
+- name: testing group var
+  hosts: production
+  tasks:
+    - name: name
+      debug: 
+        msg: hello {{ name }}
+   
